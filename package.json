@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap-date-clock-timepicker",
+  "version": "1.0.0",
+  "description": "Material-style clock face and date time picker for Bootstrap 5",
+  "keywords": [
+    "[\"bootstrap\"",
+    "\"timepicker\"",
+    "\"clock\"",
+    "\"modal\"]"
+  ],
+  "license": "MIT",
+  "author": "Nuwan_Wijeweera",
+  "type": "commonjs",
+  "main": "dist/clock-date-timepicker.js",
+  "style": "dist/clock-timepicker.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -1,0 +1,167 @@
+:root {
+  --picker-primary: #03A9F4;
+  --picker-primary-text: #ffffff;
+  --picker-hover: #e0f7fa;
+  --picker-background: #f3f3f3;
+  --picker-face: #f3f3f3;
+  --picker-text: #000;
+}
+
+body.theme-dark {
+  --picker-primary: #222;
+  --picker-primary-text: #f1f1f1;
+  --picker-hover: #999;
+  --picker-background: #7f7f7f;
+  --picker-face: #444;
+  --picker-text: #fff;
+}
+
+body.theme-orange {
+  --picker-primary: #FF5722;
+  --picker-primary-text: #ffffff;
+  --picker-hover: #ffccbc;
+  --picker-background: #fff3e0;
+  --picker-face: #ffecb3;
+  --picker-text: #333;
+}
+
+body.theme-purple {
+  --picker-primary: #673AB7;
+  --picker-primary-text: #ffffff;
+  --picker-hover: #d1c4e9;
+  --picker-background: #ede7f6;
+  --picker-face: #dcd6f4;
+  --picker-text: #222;
+}
+
+body.theme-green {
+  --picker-primary: #4CAF50;
+  --picker-primary-text: #ffffff;
+  --picker-hover: #c8e6c9;
+  --picker-background: #e8f5e9;
+  --picker-face: #d0f0d3;
+  --picker-text: #222;
+}
+
+body.theme-red {
+  --picker-primary: #F44336;
+  --picker-primary-text: #ffffff;
+  --picker-hover: #ffcdd2;
+  --picker-background: #ffebee;
+  --picker-face: #f8d7da;
+  --picker-text: #222;
+}
+
+body.theme-yellow {
+  --picker-primary: #d5dc00;
+  --picker-primary-text: #000000;
+  --picker-hover: #fff59d;
+  --picker-background: #fffde7;
+  --picker-face: #fff9c4;
+  --picker-text: #000;
+}
+
+.time-picker-modal .modal-dialog {
+  max-width: 320px;
+}
+
+.time-header {
+  background: var(--picker-primary);
+  color: var(--picker-primary-text);
+  text-align: center;
+  padding: 1rem;
+}
+
+.time-header .time-part {
+  font-size: 2.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.time-header .time-part:hover {
+  color: var(--picker-hover);
+  text-decoration: underline;
+}
+
+.time-header .time-part.active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--picker-primary-text);
+}
+
+.clock-face {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 1rem auto;
+  border-radius: 50%;
+  background: var(--picker-background);
+}
+
+.clock-number {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.clock-hand {
+  position: absolute;
+  width: 2px;
+  background: var(--picker-primary);
+  height: 100px;
+  top: 30px;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.clock-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--picker-primary);
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+  z-index: 2;
+}
+
+.clock-number {
+  color: var(--picker-text, #000);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.ampm-toggle .btn {
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  margin: 0 0.25rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-active {
+  background-color: var(--picker-primary-text) !important;
+  color: var(--picker-primary) !important;
+  font-weight: bold;
+}
+
+.theme-btn {
+  background-color: var(--picker-primary);
+  color: var(--picker-primary-text);
+  border: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.theme-btn:hover {
+  opacity: 0.9;
+}
+
+.theme-btn:focus,
+.theme-btn:active {
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.2);
+}
+
