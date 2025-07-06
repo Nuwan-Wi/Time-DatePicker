@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-date-clock-timepicker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Material-style clock face and date time picker for Bootstrap 5",
   "keywords": [
     "[\"bootstrap\"",
@@ -14,6 +14,15 @@
   "main": "dist/clock-date-timepicker.js",
   "style": "dist/clock-timepicker.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^4.44.2",
+    "rollup-plugin-css-only": "^4.5.2"
+  },
+  "dependencies": {
+    "estree-walker": "^2.0.2",
+    "picomatch": "^4.0.2"
   }
 }
