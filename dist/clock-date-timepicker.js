@@ -1,6 +1,5 @@
 (function () {
   function ClockTimePicker(targetInputSelector) {
-    // Remove old modal if exists
     const oldModal = document.getElementById("clockTimeModal");
     if (oldModal) oldModal.remove();
 
@@ -21,9 +20,12 @@
                 <div class="clock-dot"></div>
                 <div class="clock-hand" id="clockHand"></div>
               </div>
-              <div class="d-flex justify-content-between px-3">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button class="btn theme-btn" id="confirmClockBtn">OK</button>
+              <div class="d-flex justify-content-between px-3 mt-3">
+                <button class="btn btn-outline-danger" id="clearClockBtn">Clear</button>
+                <div>
+                  <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+                  <button class="btn theme-btn" id="confirmClockBtn">OK</button>
+                </div>
               </div>
             </div>
           </div>
@@ -32,6 +34,7 @@
 
     document.body.insertAdjacentHTML("beforeend", modalHTML);
 
+    const modalEl = document.getElementById("clockTimeModal");
     const inputEl = document.querySelector(targetInputSelector);
     const hourEl = document.getElementById("selectedHour");
     const minuteEl = document.getElementById("selectedMinute");
@@ -40,13 +43,14 @@
     const amBtn = document.getElementById("amBtn");
     const pmBtn = document.getElementById("pmBtn");
     const confirmBtn = document.getElementById("confirmClockBtn");
+    const clearBtn = document.getElementById("clearClockBtn");
 
     const themeAttr = inputEl.getAttribute('theme')?.toLowerCase();
     const validThemes = ['dark', 'orange', 'purple', 'green', 'red', 'yellow', 'primary'];
     const allThemes = ['theme-dark', 'theme-orange', 'theme-purple', 'theme-green', 'theme-red', 'theme-yellow'];
     document.body.classList.remove(...allThemes);
     if (validThemes.includes(themeAttr) && themeAttr !== 'primary') {
-    document.body.classList.add(`theme-${themeAttr}`);
+      document.body.classList.add(`theme-${themeAttr}`);
     }
 
     let picking = "hour";
@@ -54,7 +58,6 @@
     let selectedMinute = 0;
     let isPM = false;
 
-    // Load time from input if already set
     function loadTimeFromInput() {
       const val = inputEl.value.trim();
       if (!val) return;
@@ -109,7 +112,6 @@
     function drawClock() {
       createClockNumbers(12, picking === "hour" ? 1 : 5);
       updateClockHand();
-
       hourEl.classList.toggle("active", picking === "hour");
       minuteEl.classList.toggle("active", picking === "minute");
     }
@@ -135,24 +137,41 @@
     };
 
     confirmBtn.onclick = () => {
+      document.activeElement?.blur();
       const hourStr = (selectedHour < 10 ? "0" : "") + selectedHour;
       const minStr = (selectedMinute < 10 ? "0" : "") + selectedMinute;
       const ampm = isPM ? "PM" : "AM";
       inputEl.value = `${hourStr}:${minStr} ${ampm}`;
-      bootstrap.Modal.getInstance(document.getElementById("clockTimeModal")).hide();
+      bootstrap.Modal.getInstance(modalEl).hide();
     };
 
-    // Initialize
+    clearBtn.onclick = () => {
+      inputEl.value = "";
+      selectedHour = 12;
+      selectedMinute = 0;
+      isPM = false;
+
+      hourEl.textContent = "12";
+      minuteEl.textContent = "00";
+      setAmPmButtons();
+      picking = "hour";
+      drawClock();
+    };
+
+    modalEl.addEventListener("hide.bs.modal", () => {
+      if (document.activeElement && modalEl.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
+    });
+
     loadTimeFromInput();
     hourEl.textContent = selectedHour < 10 ? "0" + selectedHour : selectedHour;
     minuteEl.textContent = selectedMinute < 10 ? "0" + selectedMinute : selectedMinute;
     setAmPmButtons();
     drawClock();
 
-    new bootstrap.Modal(document.getElementById("clockTimeModal")).show();
+    new bootstrap.Modal(modalEl).show();
   }
-
-  
 
   window.ClockTimePicker = ClockTimePicker;
 })();
