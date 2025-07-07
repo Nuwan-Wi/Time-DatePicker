@@ -27,10 +27,10 @@ Include the assets in your HTML:
 
 html
 <!-- Clock Date Time Picker CSS -->
-<link href="node_modules/clock-date-timepicker/dist/clock-date-timepicker.css" rel="stylesheet">
+<link href="node_modules/bootstrap-date-clock-timepicker/dist/clock-date-timepicker.css" rel="stylesheet">
 
 <!-- Clock Date Time Picker JS -->
-<script src="node_modules/clock-date-timepicker/dist/clock-date-timepicker.js"></script>
+<script src="node_modules/bootstrap-date-clock-timepicker/dist/clock-date-timepicker.js"></script>
 
 
 ---
@@ -42,16 +42,14 @@ html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Clock Date Time Picker CSS -->
-<link href="https://cdn.jsdelivr.net/npm/clock-date-timepicker@1.0.0/dist/clock-date-timepicker.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.0/dist/clock-date-timepicker.css" rel="stylesheet">
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Clock Date Time Picker JS -->
-<script src="https://cdn.jsdelivr.net/npm/clock-date-timepicker@1.0.0/dist/clock-date-timepicker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.0/dist/clock-date-timepicker.js"></script>
 
-
-> 🔁 Replace 1.0.0 with the latest version when available.
 
 ---
 
@@ -59,12 +57,12 @@ html
 
 ### 🧩 Basic HTML Example
 
-html
+```html
 <div class="input-group">
   <input type="text" id="timeInput" class="form-control" readonly placeholder="Pick time" theme="orange">
   <button class="btn btn-outline-secondary" onclick="ClockTimePicker('#timeInput')">🕑</button>
 </div>
-
+```
 
 ### 🧪 JavaScript
 
@@ -80,15 +78,15 @@ This opens the clock picker and updates the input field when a time is selected.
 
 Add a theme attribute to your <input> field to change the look:
 
-| Theme Name | Attribute Example            |
-|------------|-------------------------------|
-| Default    | <input theme="primary"> or no attribute |
-| Dark       | <input theme="dark">        |
-| Orange     | <input theme="orange">      |
-| Purple     | <input theme="purple">      |
-| Green      | <input theme="green">       |
-| Red        | <input theme="red">         |
-| Yellow     | <input theme="yellow">      |
+| Theme Name | Attribute Example                     |
+|------------|----------------------------------------|
+| Default    | `<input theme="primary">` or no attribute |
+| Dark       | `<input theme="dark">`                |
+| Orange     | `<input theme="orange">`              |
+| Purple     | `<input theme="purple">`              |
+| Green      | `<input theme="green">`               |
+| Red        | `<input theme="red">`                 |
+| Yellow     | `<input theme="yellow">`              |
 
 > The time picker will apply the selected theme automatically.
 
