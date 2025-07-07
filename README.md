@@ -37,19 +37,19 @@ html
 
 ### 🌐 Option 2: Use via CDN
 
-html
+```html
 <!-- Bootstrap 5 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Clock Date Time Picker CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.0/dist/clock-date-timepicker.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.1/dist/clock-date-timepicker.css" rel="stylesheet">
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Clock Date Time Picker JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.0/dist/clock-date-timepicker.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-date-clock-timepicker@1.1.1/dist/clock-date-timepicker.js"></script>
+```
 
 ---
 
