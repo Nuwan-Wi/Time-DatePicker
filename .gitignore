@@ -27,3 +27,6 @@ dist/
 # Optional: ignore environment variables
 .env
 .env.local
+
+#gitpod Settings
+.gitpod.yml
